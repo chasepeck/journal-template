@@ -13,13 +13,13 @@ file.send(null);
 var matches = text.match(/\[([^]*?)\]/g);
 console.log(matches);
 for(var i = 0; i < matches.length; i++){
-	var split = matches[i].replace("[","").replace("]","").split("|");
-	var entry = document.createElement("div");
+    var split = matches[i].replace("[","").replace("]","").split("|");
+    var entry = document.createElement("div");
 
-	if(i % 2 == 0){
-		entry.setAttribute("style","background-color: rgb(20,20,20);")
-	}
+    if(i % 2 == 0){
+        entry.setAttribute("style","background-color: rgb(20,20,20);")
+    }
 
-	entry.innerHTML = "<b>"+split[0]+"</b> "+split[1];
-	document.body.appendChild(entry);
+    entry.innerHTML = "<b>"+split[0].trim()+"</b>"+split[1].trim();
+    document.body.appendChild(entry);
 }
